@@ -6,56 +6,78 @@ interface IPostCardProps {
   link: string;
   desc?: string;
   title: string;
+  date?: string;
   imgUrl: string;
   author?: string;
+  className?: string;
   badgeTitle?: string;
   badgeColor?: string;
+  badgeClassName?: string;
+  badgeBottomCenter?: boolean;
 }
 
 export const PostCard = ({
-  desc,
   link,
+  desc,
   title,
-  author,
+  date,
   imgUrl,
+  author,
+  className = "",
   badgeTitle,
-  badgeColor,
+  badgeClassName = "bg-gray-500",
 }: IPostCardProps) => {
-  const date = new Date().toDateString();
-
   return (
-    <Link href={`${link ?? "#"}`}>
-      <div className="bg-white shadow-md">
-        <div className="relative">
+    <Link href={link ?? "#"} className="block">
+      <div className="bg-white shadow-md overflow-hidden">
+        {/* Image + Badge */}
+        <div className="relative w-full h-52">
           <Image
             src={imgUrl ?? "/assets/images/image-4.jpg"}
-            alt="sidebar"
-            width={300}
-            height={300}
-            className="w-full h-52 object-cover"
+            alt={title}
+            fill
+            className="object-cover w-full h-full"
           />
-          <span
-            className={`text-[10px] text-white font-semibold leading-2.5 absolute top-4 left-4 uppercase ${badgeColor} py-1 px-1`}
-          >
-            {badgeTitle}
-          </span>
+
+          {badgeTitle && (
+            <span
+              className={`text-[10px] text-white font-semibold uppercase py-1 px-2 flex justify-center items-center ${badgeClassName ?? "absolute top-4 left-4"}
+              `}
+            >
+              {badgeTitle}
+            </span>
+          )}
         </div>
 
-        <div className="p-4">
+        {/* Content */}
+        <div className={`p-4 flex flex-col ${className}`}>
           <h4 className="mt-2 text-[20px] font-semibold leading-7">{title}</h4>
 
-          <div className="flex items-center gap-2 mt-2">
-            <span className="text-xs text-gray-400 leading-5">by</span>
-            <span className="text-xs font-semibold leading-5 uppercase">
-              {author}
-            </span>
-            <span className="text-xs text-gray-400 leading-5 flex items-center gap-1">
-              <CiClock2 />
-              {date}
-            </span>
-          </div>
+          {(author || date) && (
+            <div
+              className={`flex flex-col ${
+                className.includes("text-center")
+                  ? "items-center"
+                  : "items-start"
+              } gap-1 mt-2 text-xs text-gray-400`}
+            >
+              {author && (
+                <span className="font-semibold uppercase text-gray-800">
+                  by {author}
+                </span>
+              )}
 
-          <p className="mt-4 text-sm leading-6 text-gray-600">{desc}</p>
+              {date && (
+                <span className="flex items-center gap-1">
+                  <CiClock2 /> {date}
+                </span>
+              )}
+            </div>
+          )}
+
+          {desc && (
+            <p className="mt-4 text-sm leading-6 text-gray-600">{desc}</p>
+          )}
         </div>
       </div>
     </Link>

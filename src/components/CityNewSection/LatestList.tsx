@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const LatestList = () => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-8">
       <div className="bg-white p-4 shadow-md">
         <CardHeader title="the latest" />
 

@@ -11,7 +11,7 @@ export const FeaturedPostTopSlide = () => {
     stopAutoSlide();
     intervalRef.current = setInterval(() => {
       goNext();
-    }, 5000);
+    }, 3000);
   };
 
   const stopAutoSlide = () => {

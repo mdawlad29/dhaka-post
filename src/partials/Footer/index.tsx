@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer className="bg-white mt-20">
-      <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
+    <footer className="bg-white">
+      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
         {/* About */}
         <div className="space-y-3">
-          <h3 className="font-extrabold tracking-widest text-lg">
+          <h3 className="font-extrabold tracking-widest md:text-lg">
             THE DOWNTOWN
           </h3>
           <p className="text-gray-600 leading-relaxed">
@@ -18,43 +20,45 @@ export default function Footer() {
 
         {/* Recent News */}
         <div>
-          <h4 className="font-bold mb-4">Recent News</h4>
-          <ul className="space-y-3 text-gray-700">
-            <li>
+          <h4 className="font-bold mb-4 md:text-lg">Recent News</h4>
+          <ul className="font-semibold">
+            <Link href={""} className="inline-block mb-3">
               Grab tackles Jakarta’s odd-even license plate policy
-              <span className="block text-xs text-gray-500">July 6, 2018</span>
-            </li>
-            <li>
+              <span className="text-xs text-gray-500">July 6, 2018</span>
+            </Link>
+            <Link href={""} className="inlineblock mb-3">
               Jokowi supporters try to prevent activist
-              <span className="block text-xs text-gray-500">July 5, 2018</span>
-            </li>
-            <li>
+              <span className="text-xs text-gray-500">July 5, 2018</span>
+            </Link>
+            <Link href={""} className="inline-block mb-3">
               China To Build Indonesia’s Longest Bridge
-              <span className="block text-xs text-gray-500">July 4, 2018</span>
-            </li>
+              <span className="text-xs text-gray-500">July 4, 2018</span>
+            </Link>
           </ul>
         </div>
 
         {/* Categories */}
         <div>
-          <h4 className="font-bold mb-4">Categories</h4>
-          <div className="grid grid-cols-2 gap-y-2 text-gray-700">
-            <span>Business</span>
-            <span>Opinion</span>
-            <span>Culture</span>
-            <span>Politics</span>
-            <span>Lifestyle</span>
-            <span>Sports</span>
-            <span>National</span>
-            <span>Travel</span>
-            <span>News</span>
-            <span>World</span>
+          <h4 className="font-bold mb-4 md:text-lg">Categories</h4>
+          <div className="grid grid-cols-2 gap-y-2 font-semibold">
+            <Link href={"#"}>Business</Link>
+            <Link href={"#"}>Opinion</Link>
+            <Link href={"#"}>Culture</Link>
+            <Link href={"#"}>Politics</Link>
+            <Link href={"#"}>Lifestyle</Link>
+            <Link href={"#"}>Sports</Link>
+            <Link href={"#"}>National</Link>
+            <Link href={"#"}>Travel</Link>
+            <Link href={"#"}>News</Link>
+            <Link href={"#"}>World</Link>
           </div>
         </div>
 
         {/* Newsletter */}
         <div>
-          <h4 className="font-bold mb-4">Sign Up For Our Newsletter</h4>
+          <h4 className="font-bold mb-4 md:text-lg">
+            Sign Up For Our Newsletter
+          </h4>
           <p className="text-gray-600 mb-3">
             Subscribe to our mailing list to receive daily updates.
           </p>

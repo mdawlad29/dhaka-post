@@ -28,24 +28,24 @@ export const MobileViewDrawer = ({
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Drawer Header */}
+        {/* Header */}
         <div className="h-14 px-4 flex items-center justify-between border-b">
           <span className="font-bold tracking-widest text-sm">MENU</span>
-          <button onClick={() => setOpen(false)}>
+          <button onClick={() => setOpen(false)} className="cursor-pointer">
             <HiX className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Drawer Menu */}
-        <nav className="flex flex-col px-4 py-4 space-y-4 text-sm font-semibold uppercase">
+        {/* ✅ Scrollable Menu Area */}
+        <nav className="px-4 py-4 text-sm font-semibold uppercase overflow-y-auto h-[calc(100vh-3.5rem)] space-y-4">
           {menu.map((item) => (
             <Link
-              key={item}
+              key={item.id}
               href="#"
               onClick={() => setOpen(false)}
-              className="pb-2"
+              className="block pb-2 border-b border-gray-200 last-of-type:border-0"
             >
-              {item}
+              {item.name}
             </Link>
           ))}
         </nav>

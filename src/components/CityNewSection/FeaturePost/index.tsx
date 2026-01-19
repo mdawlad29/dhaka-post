@@ -2,12 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { CiClock2 } from "react-icons/ci";
 import { FeaturedPostTopSlide } from "./FeaturePostTopSlide";
+import { PostCard } from "@/src/shared/Card";
 
 const FeaterPost = () => {
   const date = new Date().toDateString();
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-8">
       <FeaturedPostTopSlide />
 
       <article className="bg-white shadow-md">
@@ -63,8 +64,27 @@ const FeaterPost = () => {
         </div>
 
         {/* Spacer for overlap */}
-        <div className="h-42"></div>
+        <div className="h-48"></div>
       </article>
+
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
+        {[...Array(4)].map((_, i) => (
+          <PostCard
+            key={i}
+            link="#"
+            date="Mon, 12 May 2023"
+            badgeTitle="Lifestyle"
+            badgeClassName="bg-blue-500 absolute bottom-0 left-1/2 transform -translate-x-1/2"
+            imgUrl={
+              i === 0
+                ? "/assets/images/image-11.jpg"
+                : "/assets/images/image-12.jpg"
+            }
+            title="Democratic Party politician calls Prabowo ‘cardboard general’"
+            className="text-center"
+          />
+        ))}
+      </div>
     </div>
   );
 };

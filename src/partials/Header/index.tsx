@@ -30,8 +30,8 @@ export default function Header() {
 
       {/* Navigation Bar */}
       <div className="border-t border-gray-500 shadow-md">
-        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
-          <button className="lg:hidden" onClick={() => setOpen(true)}>
+        <div className="max-w-7xl mx-auto h-14 flex items-center justify-between">
+          <button onClick={() => setOpen(true)}>
             <HiMenu className="w-6 h-6" />
           </button>
 

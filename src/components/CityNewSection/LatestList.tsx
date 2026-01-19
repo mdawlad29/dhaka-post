@@ -25,7 +25,7 @@ const LatestList = () => {
       <div className="bg-white p-4 shadow-md">
         <CardHeader title="opinion" />
 
-        <div className="space-y-3">
+        <div className="space-y-5">
           {OpinionItems?.map((opinion, idx) => (
             <ListItem key={idx} title={opinion?.title} />
           ))}

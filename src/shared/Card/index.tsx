@@ -89,9 +89,7 @@ export const ImageInlineCard = ({
         className="object-cover"
       />
 
-      <p
-        className={`line-clamp-1 text-sm font-semibold leading-snug ${className}`}
-      >
+      <p className={`text-sm font-semibold leading-snug ${className}`}>
         {title}
       </p>
     </div>

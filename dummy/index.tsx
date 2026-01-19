@@ -40,3 +40,42 @@ export const OpinionItems = [
     title: "Millions of Indigenous People May Lose Voting Rights: Alliance",
   },
 ];
+
+export const slideItems = [
+  {
+    image: "/assets/images/image-1.jpg",
+    title: "Unconventional workouts that ",
+  },
+  {
+    image: "/assets/images/image-2.jpg",
+    title: "Millions of Indonesians People ",
+  },
+  {
+    image: "/assets/images/image-7.jpg",
+    title: "Cincinnati to Put BRI's Track ",
+  },
+  {
+    image: "/assets/images/image-6.jpg",
+    title: "President Jokowi to Visit Middle East",
+  },
+  {
+    image: "/assets/images/image-5.jpg",
+    title: "Garuda operates larger planes",
+  },
+  {
+    image: "/assets/images/image-2.jpg",
+    title: "Millions of Indonesians People ",
+  },
+  {
+    image: "/assets/images/image-7.jpg",
+    title: "Cincinnati to Put BRI's Track ",
+  },
+  {
+    image: "/assets/images/image-6.jpg",
+    title: "President Jokowi to Visit Middle East",
+  },
+  {
+    image: "/assets/images/image-5.jpg",
+    title: "Garuda operates larger planes",
+  },
+];
